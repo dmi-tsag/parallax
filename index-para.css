@@ -15,8 +15,8 @@
 
 .parallax__group {
 	position: relative;
-/*	margin:10px 0 10px 0;/**/
-/*	padding:1px;/**/
+/*	margin: 10px 0 10px 0;/**/
+/*	padding: 1px;/**/
 	height: 100vh;/**/
 	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
