@@ -1,0 +1,105 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.parallax {
+	-webkit-perspective: 100px;
+	-moz-perspective: 100px;
+	perspective: 100px;/**/
+	height: 100vh;
+	overflow-x: hidden;
+	overflow-y: auto;/**/
+	font-size: 200%;
+}
+
+.parallax__group {
+	position: relative;
+/*	margin:10px 0 10px 0;/**/
+/*	padding:1px;/**/
+	height: 100vh;/**/
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.parallax__layer {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+/*	margin: 10px 0 10px 0;/**/
+/*	padding: 100vh 0;/**/
+	border: 3px solid red;
+}
+.parallax__layer--foreground {
+	-webkit-transform: translateZ(0px);
+	transform: translateZ(0px);
+	z-index: 4;
+}
+.parallax__layer--base {
+	-webkit-transform: translateZ(-100px); /*scale(1);*/
+	transform: translateZ(-100px);
+	z-index: 3;
+}
+.parallax__layer--base-1 {
+	-webkit-transform: translateZ(-200px); /*scale(1);*/
+	transform: translateZ(-200px);
+	z-index: 2;
+}
+.parallax__layer--back {
+	-webkit-transform: translateZ(-300px) scale(1);
+	transform: translateZ(-300px) scale(1);
+	z-index: 1;
+}
+
+#group1 {
+	z-index: 1; /* slide over group 2 */
+}
+#group1 .parallax__layer--base {
+	background: rgba(102,204,102,0.5);
+}
+#group1 .parallax__layer--base-1 {
+	background: rgba(102,204,102,0.5);
+}
+#group1 .parallax__layer--foreground {
+/*	margin:0 0 10px 0;/**/
+	background: rgba(102,204,102,0.5);
+}
+#group1 .parallax__layer--back {
+	background: rgba(102,204,102,0.5);
+}
+
+#group2 {
+	z-index: 1; /* slide under groups 1 and 3 */
+}
+#group2 .parallax__layer--base {
+	background: rgba(102,204,102,0.5);
+}
+#group2 .parallax__layer--base-1 {
+	background: rgba(102,204,102,0.5);
+}
+#group2 .parallax__layer--foreground {
+/*	margin:0 0 10px 0;/**/
+	background: rgba(102,204,102,0.5);
+}
+#group2 .parallax__layer--back {
+	background: rgba(123,210,102,0.5);
+}
+
+body {
+	font: 100% / 1.5 Arial;/**/
+}
+
+p {
+	background-color: lightblue;
+}
+
+.title {
+/*	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);/**/
+}
+
